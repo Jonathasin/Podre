@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+   
+    <table border="5" width="30%" size="20" align="Center">
+
+        <caption><font color="red" size="14">Chave-car</font></caption>
+
+      <tr>
+         
+        <th width="1%"><font size="5">Codigo do Produto</th>
+        <th width="10%"><font size="5">Produto</font></th>
+        <th width="10%"><font size="5">Valor Unitario</font></th>
+
+      </tr>
+        <tr>
+          <td width="2%">5</td><td>Chave Yale</td><td>R$ 8.00</td>
+        </tr>
+        <tr>
+          <td>22</td><td>Chave Gorje</td><td>R$ 20.00</td>
+        </tr>
+        <tr>
+           <td>31</td><td>Chave Tetra</td><td>R$ 30.00</td> 
+          </tr>
+
+     
+
+
+   
