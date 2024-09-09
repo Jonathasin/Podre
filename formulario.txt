@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title>Document</title>
+
+</head>
+<body bgcolor="marineblue">
+   <h1>Criando meu primeiro formulario</h1>
+
+   <form>
+     <font size="4" face="Arial">Nome: <input type="text" name="Nome"
+      size="40"><br><br>
+    E-mail <input type="email" name="email" value="@"><br><br>
+    Senha: <input type="password" size="8" name="senha"><br><br>
+    Endereço: <input type="text" name="endereco" size="30" maxlenght="20"><br><br>
+    Cidade: <input type="text" name="cidade"> CEP: <input type="text"
+    name="cep" value="Apenas Numeros"><br><br>
+    Telefone: <input type="text" name="telefone"><br><br>
+    Escolaridade:
+        <select name="Escolaridade">
+           <option>Clique na Escolaridade</option>
+           <option>Fundamental</option>
+           <option>Ensino Médio</option>
+           <option>Ensino Superior</option>
+           <option>Podre</option>
+        </select><br><br>
+        <textarea rows="10" cols="40">Deixe seu feedback</textarea> 
+
+    <br><br>
+    <b>Sexo: </b>
+    <input type="radio" name="sexo"> Feminino
+    <input type="radio" name="sexo"> Masculino<br>
+    <b>Deseja receber notificações por e-mail?</b>
+    E-mail <input type="checkbox" name="email_pro">
+    Whatsapp <input type="checkbox" name="wat_pro"> 
+    SMS <input type="checkbox" name="sms_pro"  
+
+
+     </font> <br><br>
+     <input type="button" value="Cadastrar">
+     <input type="button" value="Limpar"
+
+
+    
+   </form>
+  
+  </body>
+
+
+
+
+
+
+</body>
