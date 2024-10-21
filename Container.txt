@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title>Document</title>
+    <style>
+
+.container{
+width: 60%;
+max-width: 90%;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid blue;
+border-radius: 4px;
+background-color: lightgrey;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+h1{
+text-align: center;
+color: purple;
+}
+p{
+    font-size: 16px;
+    color: brown;
+    text-align: center;
+}
+  .item{
+      background-color: cornflowerblue;
+      color: blueviolet;
+      padding: 20px;
+      margin: 10px;
+      flex: 1 1 200px;
+      text-align: center;
+      border-radius: 6px;
+    }
+    @media(max-width: 760px){
+        .container{
+            justify-content: center;
+        }
+        .item{
+            flex: 1 1 100px;
+        }
+    } 
+
+    </style>
+</head>
+<body>
+    <h1>Primeiro Container</h1>
+    <p>Este é o início do aprendizado em containers</p>
+     <div class="container">
+     <div class="item">Home</div>
+     <div class="item">Cadastro</div>
+     <div class="item">Ajuda</div>    
+    </div>
+    
+
+</body>
+</html>
