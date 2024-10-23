@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu curriculo</title>
+ <style>
+    .container{
+    width: 60%;
+    max-width: 90%;
+    background-color: lightgrey;
+    padding: 20px;
+    margin: 10px;
+    margin: 0 auto;
+    }
+    h2{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: purple;
+    }
+    h3{
+        text-align: center;
+        font-size: 15px;
+        color: blue;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    img{
+        width: 20%;
+        border-radius: 4px;
+        padding: 5px;
+        width: 19%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+ </style>   
+</head>
+     <body>
+        <div class="container">
+        <div class="h2"></div>
+        <div class="img"></div>
+        <img src="tCurriculo.jpeg" class="center">
+        <h2>Jonathas Alves de Assis</h2>
+        <h3>Cursando Análise de Sistemas<br>(37) 99120-8363<br>Email: jonathas.alves2@gmail.com</h3>
+        </div>
+     </body>    
+</html>
