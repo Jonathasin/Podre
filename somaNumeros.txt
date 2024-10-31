@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta charset="Utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h2>Soma Numeros</h2>
+    <p id="resultado"></p>
+    <script>
+        var num1 = parseFloat(prompt("Digite o numero 1"));
+        var num2 = parseFloat(prompt("Digite o numero 2"));
+        var confirma = confirm("Deseja realizar a soma de " + num1 + "+" + num2 + ":");
+        if(confirma){
+            var soma = num1 + num2;
+            document.getElementById("resultado").innerText = "A soma é: " + soma;
+        }
+        else{
+            document.getElementById("resultado").innerText = "Como que é eu vou somar se tu cancelou seu ANIMAL!!";
+        }
+
+    </script>
+
+</body>
+</html>
