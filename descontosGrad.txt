@@ -14,9 +14,11 @@
         <label for="endereco">Endereço</label>
         <input type="text" id="endereco"><br><br>
         <label for="salario">Salario</label>
-        <input type="text" id="salario"><br><br>
+        <input type= "text" id="salario"><br><br>
+        <label for="ano">Primeiro Ano na Empresa</label>
+        <input for="anoInicio" id="anoInicio"><br><br>
         <label for="data"></label>
-        <input type="date" id="data"><br><br>
+        <input type="date" id="data"><br><br> 
         <button id="Confirmar">Confirmar</button>
       </form>
       <p id="hora"></p>
@@ -29,10 +31,18 @@
         var endereco = document.getElementById("endereco").value;
         var data = document.getElementById("data").value;
         var salario = document.getElementById("salario").value;
+        var ano_inicio = parseInt(document.getElementById("anoInicio").value);
+        var ano_atual = new date().getFullYear;
+        var anos_trabalhados = ano_atual - ano_inicio;
+        var doutorado = anos_trabalhados * 0.15;
+        var pAnos = anos_trabalhados * 2;
+        var INSS = 4;  
         document.write("O nome é: " + nome + "<br>" + "<br>");
         document.write("O endereço é: " + endereco + "<br>" + "<br>");
         document.write("Sua Data de Nascimento é : " + data + "<br>" + "<br>");
         document.write("Salario: " + salario + "<br>" + "<br>");
+        document.write("Anos trabalhados: " + anos_trabalhados);
+        
     }
     )
     </script>
