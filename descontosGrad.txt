@@ -22,9 +22,17 @@
         <input type="text" id="anoInicio"><br><br>
         
         <label for="data">Nascimento: </label>
-        <input type="date" id="data"><br><br> 
+        <input type="date" id="data"><br> 
+        <p>Titulação: </p>
+        <input type="radio" id="grad" value="Pós-Graduação" name="question">
+        <label for="Pós-Graduação">Pós-Graduação</label><br>
+        <input type="radio" id="mestrado" value="Mestrado" name="question">
+        <label for="Mestrado">Mestrado</label><br>
+        <input type="radio" id="doutorado" value="Doutorado" name="question">
+        <label for="Mestrado">Doutorado</label><br><br>
         <button id="Confirmar">Confirmar</button>
       </form>
+      <p id="hora"></p>
     <script>
         
         document.getElementById("Confirmar").addEventListener("click", function ()
@@ -32,30 +40,49 @@
     {
         var nome = document.getElementById("nome").value;
         var endereco = document.getElementById("endereco").value;
-        var data = document.getElementById("data").value;
         var salario = parseFloat(document.getElementById("salario").value);
         var ano_inicio = parseFloat(document.getElementById("anoInicio").value);
-        var anoAtual = new date().getFullYear();
+        var data = document.getElementById("data").value;
+        var grad = document.getElementById("grad").value
+        var mestre = document.getElementById("mestrado").value
+        var doc = document.getElementById("doutorado").value
+        var anoAtual = new Date().getFullYear();
         
+        var INSS = 4; 
         var percentBase = 2;
-        var percentAnos = anos_trabalhados * pBase;
+        var anos_trabalhados = anoAtual - ano_inicio;
+        var percentAnos = anos_trabalhados * percentBase;
+        var aumentSalario = ((salario * anos_trabalhados) / 100 * percentAnos) + salario * anos_trabalhados;
         var percentINSS = anos_trabalhados * INSS;
-        var anos_trabalhados = ano_atual - ano_inicio;
-        var salarioAnos = salario * anos_trabalhados;
-        var correcaoINSS = salario * anos_trabalhados / 100 * percentINSS;
-        var salarioFinal = salarioAnos - correcaoINSS;
-        var posGrad = anos_trabalhados * 0.05;
-        var mestrado = anos_trabalhados * 0.10;
-        var doutorado = anos_trabalhados * 0.15;
-        var INSS = 4;  
+        var salarioFinal = aumentSalario - (aumentSalario / 100 * percentINSS);
+        var posGrad = salarioFinal + (salarioFinal / 100 * 5);
+        var mestrado = salarioFinal + (salarioFinal / 100 * 10);
+        var doutorado = salarioFinal + (salarioFinal / 100 * 15);
+         
         
-        document.write("O nome é: " + nome + "<br>" + "<br>");
-        document.write("O endereço é: " + endereco + "<br>" + "<br>");
-        document.write("Sua Data de Nascimento é : " + data + "<br>" + "<br>");
+        document.write("Nome: " + nome + "<br>" + "<br>");
+        document.write("Endereço: " + endereco + "<br>" + "<br>");
+        document.write("Data de Nascimento: " + data + "<br>" + "<br>");
         document.write("Salario: " + salario + "<br>" + "<br>");
-        document.write("Anos Trabalhados: " + anos_trabalhados + "<br>");
-        
-    });
+        document.write("Anos Trabalhados: " + anos_trabalhados + "<br>" + "<br>");
+
+        if(document.getElementById("grad")){
+
+          document.write("Salario Final: " + posGrad);
+
+        }else if(document.getElementById("mestrado")){
+          
+          document.write("Salario Final: " + mestrado);
+
+        }else if(document.getElementById("doutorado")){
+
+          document.write("Salario Final: " + doutorado);
+
+        }else{
+          document.write("Salario Final: " + salarioFinal);
+        }
+      
+      });
     </script>
 </body>
 </html>
