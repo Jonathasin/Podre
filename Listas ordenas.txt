@@ -1,0 +1,142 @@
+#include<fstream>
+#include <iostream>
+#include <string>
+//#include<conio.h>
+
+using namespace std;
+
+const int maxtam = 100;
+typedef string TipoChave;
+
+struct TipoItem{
+TipoChave chave;
+    /* ---- outros componentes de um item */
+};
+struct TipoLista{
+    TipoItem item[maxtam];
+    int primeiro, ultimo;
+};
+
+//inicializa uma lista
+void FLVazia(TipoLista *lista){
+    lista->primeiro = 0; lista->ultimo = lista->primeiro;
+}
+
+//Testa se a lista informada esta vazia
+int Vazia(TipoLista lista){
+    return (lista.primeiro == lista.ultimo);
+}
+
+//Insere o elemento x ao final de lista
+void Insere(TipoItem x, TipoLista *lista){
+    if (lista->ultimo >= maxtam)
+        cout << endl << "Lista esta cheia\n";
+    else{
+        lista->item[lista->ultimo] = x;
+        lista->ultimo++;
+    }
+}
+
+// Insere um elemento à lista na posição (p-1)
+void Insere(TipoItem x, int p, TipoLista *lista){
+    p--;  // p e passado como posição
+    if  ((lista->ultimo >= maxtam)  ||
+         (p < lista->primeiro) || (p > lista->ultimo)){
+             cout << endl << "Lista cheia ou posicao invalida: " << p;
+             return;
+    }
+
+    for(int i=lista->ultimo; i > p; i--)
+        lista->item[i] = lista->item[i-1];
+    lista->item[p] = x;
+    lista->ultimo++;
+}
+
+//Retira o p-ésimo elemento (posição p-1) de lista e o devolve no argumento item
+void Retira(int p, TipoLista *lista, TipoItem *item){
+    int aux;
+    if (Vazia(*lista) || p>= lista->ultimo){
+        cout << endl << "Erro: posicao nao existe\n";
+        return;
+    }
+    *item = lista->item[p-1];
+    for(aux = p; aux < lista->ultimo - 1; aux++)
+        lista->item[aux-1] = lista->item[aux];
+
+    lista->ultimo--;
+}
+
+// Exibe os elementos da lista informada
+void Imprime(TipoLista lista){
+     int aux;
+     for(aux= lista.primeiro; aux < lista.ultimo; aux++)
+        cout << "Imprimindo...: " << lista.item[aux].chave << endl;
+}
+
+int main()
+{
+    TipoLista lista;
+    FLVazia(&lista);
+    int opcao;
+    string name;
+
+
+  do{
+
+    cout << "Escolha uma das opções" << "\n";
+    cout << "1 - Inserir aluno na lista" << "\n";
+    cout << "2 - Remover aluno da lista" << "\n";
+    cout << "3 - Buscar um aluno usando o nome" << "\n";
+    cout << "4 - Exibir todos os alunos da lista" << "\n";
+    cout << "5 - Fechar o programa" << "\n";
+
+    cin >> opcao;
+
+
+    switch (opcao){
+
+       case 1:
+           cout << "Digite o nome do aluno: \n";
+           cin >> name;
+           TipoItem it;
+           it.chave = name;
+           Insere(it, &lista);
+           break;
+       case 2:
+           cout << "Digite o nome do aluno ser removido \n";
+           cin >> name;
+           break;
+       case 3:
+           cout << "Buscando um novo aluno... \n";
+           break;
+       case 4:
+           cout << "Exibindo todos os alunos da lista: \n";
+           Imprime(lista);
+           break;
+       case 5:
+           cout << "Fechar o programa \n";
+           break;
+       default:
+           cout << "Opcao Invalida! \n";
+      }
+
+     } while(opcao != 5);
+
+
+    /*TipoItem it;
+    // Inserindo elementos
+
+    it.chave = 2;
+    Insere(it, &lista);
+    it.chave = 3;
+    Insere(it, &lista);
+    //Imprimindo Lista
+    Imprime(lista);
+    // Removendo o primeiro elemento ( posição 0)
+    Retira(0, &lista, &it);
+    cout << "Item retirado: " << it.chave << endl;
+    //Imprimindo Lista
+    Imprime(lista);
+    */
+    return 0;
+}
