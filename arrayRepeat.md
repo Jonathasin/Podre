@@ -19,7 +19,7 @@
     } 
        for (j = 0; j <= 9; j++){
         if(aRef[arrayNumbers[j]] == undefined){
-            aRef[arrayNumbers[j]] += 1;
+            aRef[arrayNumbers[j]] += 1; // += é o mesmo que aRef[arrayNumbers[j]] = aRef[arrayNumbers[j]] + 1
 
         }
        }
