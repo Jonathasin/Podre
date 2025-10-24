@@ -1,0 +1,62 @@
+using System;
+using System.Dynamic;
+using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
+using System.Linq;
+using System.Buffers;
+
+namespace Primeiro {
+    class Program {
+        static void Main(string[] args)
+        {
+
+            CultureInfo CI = CultureInfo.InvariantCulture;
+
+            double precoVenda, quant;
+            int i;
+
+            Console.Write("Numero de pocoes: ");
+            quant = int.Parse(Console.ReadLine()!, CI);
+
+            Console.Write("Preco de venda da pocao: ");
+            precoVenda = double.Parse(Console.ReadLine()!, CI);
+
+            Console.Write("Quantos reagentes a pocao tera? ");
+            int n = int.Parse(Console.ReadLine()!, CI);
+
+            double [] reagentes = new double[n];
+            int[] contagem = new int[n];
+          
+            double custoNormal = 0;
+
+            for (i = 0; i < n; i++) {
+                Console.Write("Valor do " + (i + 1) + "° material e sua quantidade: ");
+                reagentes[i] = double.Parse(Console.ReadLine()!, CI);
+                contagem[i] = int.Parse(Console.ReadLine()!, CI);
+
+                custoNormal += reagentes[i] * contagem[i];
+            }
+            
+            
+            double nCrafts = quant;
+            double pocoes = nCrafts * 5;
+            double custoTotal = custoNormal * nCrafts;
+            double custoNominal = custoTotal * 0.752;
+            double receitaTotal = precoVenda * pocoes;
+            double imposto = receitaTotal * 0.105;
+            double lucro = receitaTotal - custoNominal - imposto;
+
+            Console.WriteLine("Custo: " + custoTotal);
+            Console.Write("Lucro: " + lucro.ToString("F1", CI));
+            
+
+        }
+
+
+
+    }
+
+}
+
